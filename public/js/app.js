@@ -1,44 +1,41 @@
-//$name = DB::select('select name from strategies WHERE id=1');
-// var app = new Vue({
-//     el: '.form-group #exampleFormControlSelect1',
-//     delimiters: ['<%', '%>'],
-//     data: {
-//         getDatas: [
-//             {
-//                 id: 0,
-//                 message: "Hello world"
-//             },
-//             {
-//                 id: 1,
-//                 message: "Hello world 1"
-//             },
-//             {
-//                 id: 2,
-//                 message: "Hello world 2"
-//             },
-//             {
-//                 id: 3,
-//                 message: "Hello world 3"
-//             }
-//         ]
-//     }
-// })
-
-
 var app = new Vue({
     el: '.wrapper',
     delimiters: ['<%', '%>'],
     data () {
         return {
             getDatas: null,
-            getstrategies: null
+            getstrategies: null,
+            getSignals: null
+        }
+    },
+    methods: {
+      editUrl(id) {
+          return STRATEGY_EDIT_URL.replace(':id', id);
+      },
+        deleteUrl(id){
+          return STRATEGY_DELETE_URL.replace(':id', id);
+        }
+        ,
+        updateUrl(id){
+          return STRATEGY_UPDATE_URL.replace(':id', id);
         }
     },
     async mounted () {
         const response = await axios
             .get('http://localhost:8000/api/strategies/');
-        console.log('re', response);
+        //console.log('re', response);
         this.getDatas = response['data'];
         this.getstrategies = response['data'];
-    }
+
+        const response1 = await axios
+            .get('http://localhost:8000/api/signals/');
+        //console.log('re', response);
+        this.getSignals = response1['data'];
+    },
+    // async mounted () {
+    //     const response = await axios
+    //         .get('http://localhost:8000/api/signals/');
+    //     //console.log('re', response);
+    //     this.getSignals = response['data'];
+    // }
 })

@@ -4,9 +4,9 @@ namespace App\Http\Controllers\api;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Strategy;
+use App\Signal;
 
-class PostController extends Controller
+class SignalController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +15,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        return Strategy::all();
+        return Signal::all();
     }
 
     /**
@@ -26,7 +26,7 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        return Strategy::create($request->all());
+        //
     }
 
     /**
@@ -35,9 +35,9 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Strategy $strategy)
+    public function show($id)
     {
-        return $strategy;
+        //
     }
 
     /**
@@ -47,9 +47,9 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Strategy $strategy)
+    public function update(Request $request, $id)
     {
-        $strategy->update($request->all());
+        //
     }
 
     /**
@@ -58,9 +58,8 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Strategy $strategy)
+    public function destroy($id)
     {
-//        dd($strategy);
-        $strategy->delete();
+        //
     }
 }

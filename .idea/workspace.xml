@@ -1,7 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6e73c7d2-23af-41a5-9a5b-38effb4203ab" name="Default Changelist" comment="" />
+    <list default="true" id="6e73c7d2-23af-41a5-9a5b-38effb4203ab" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SignalController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SignalController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/StrategyController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/StrategyController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/api/PostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/api/PostController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/admin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/admin.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/partials/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/partials/header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/partials/siderbar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/partials/siderbar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/signal/add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/signal/add.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/signal/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/signal/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/strategy/add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/strategy/add.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/strategy/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/strategy/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/strategy/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/strategy/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,6 +33,9 @@
         <option value="composer.json" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -159,7 +178,10 @@
       <updated>1608948569555</updated>
       <workItem from="1608948571400" duration="8799000" />
       <workItem from="1608979287242" duration="15114000" />
-      <workItem from="1609121961790" duration="20238000" />
+      <workItem from="1609121961790" duration="21089000" />
+      <workItem from="1609169987629" duration="600000" />
+      <workItem from="1609190353983" duration="2445000" />
+      <workItem from="1609206290947" duration="25649000" />
     </task>
     <servers />
   </component>
@@ -175,13 +197,13 @@
       <screen x="2560" y="661" width="819" height="574" />
     </state>
     <state x="2560" y="661" width="581" height="574" key="find.popup/0.0.1280.680/2560.661.819.574@2560.661.819.574" timestamp="1608984538221" />
-    <state x="299" y="152" key="run.anything.popup" timestamp="1608955811035">
+    <state x="300" y="153" key="run.anything.popup" timestamp="1609210679961">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="299" y="152" key="run.anything.popup/0.0.1280.680@0.0.1280.680" timestamp="1608955811035" />
-    <state x="305" y="4" width="672" height="678" key="search.everywhere.popup" timestamp="1609149214337">
+    <state x="300" y="153" key="run.anything.popup/0.0.1280.680@0.0.1280.680" timestamp="1609210679961" />
+    <state x="310" y="9" width="672" height="678" key="search.everywhere.popup" timestamp="1609222573825">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="305" y="4" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1609149214337" />
+    <state x="310" y="9" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1609222573825" />
   </component>
 </project>

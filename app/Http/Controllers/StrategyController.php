@@ -12,6 +12,9 @@ class StrategyController extends Controller
     {
         $this->strategy = $strategy;
     }
+    public function index(){
+        return view('strategy.index');
+    }
     public function create(){
 //        $htmlOption = $this->getCategory($parentId='');
 //        return view('category.add', compact('htmlOption'));
@@ -42,24 +45,20 @@ class StrategyController extends Controller
 //        $htmlOption = $recusive->categoryRecusive($parentId);
 //        return $htmlOption;
 //    }
-//    public function edit($id){
-//        $category = $this->category->find($id);
-//        $htmlOption = $this->getCategory($category->parent_id);
+    public function edit($id){
+        $strategy = $this->strategy->find($id);
+        return view('strategy.edit',compact('strategy'));
+    }
 //
-//        return view('category.edit', compact('category', 'htmlOption'));
-//    }
+    public function update($id, Request $request){
+        $strategy = $this->strategy->find($id)->update([
+            'names' => $request->name_stratery,
+        ]);
+        return redirect()->route('strategy.index');
+    }
 //
-//    public function update($id, Request $request){
-//        $category = $this->category->find($id)->update([
-//            'name' => $request->name,
-//            'parent_id' => $request->parent_id,
-//            'slug' => str_slug($request->name),
-//        ]);
-//        return redirect()->route('categories.index');
-//    }
-//
-//    public function delete($id){
-//        $this->category->find($id)->delete();
-//        return redirect()->route('categories.index');//dùng redirect để xử lý chuyển trang
-//    }
+    public function delete($id){
+        $this->strategy->find($id)->delete();
+        return redirect()->route('strategies.index');//dùng redirect để xử lý chuyển trang
+    }
 }

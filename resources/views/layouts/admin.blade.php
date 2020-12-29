@@ -9,7 +9,7 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="{{ asset('adminLTE/plugins/fontawesome-free/css/all.min.css') }} ">
     <!-- Ionicons -->
-    <link rel="stylesheet" href="adminLTE/https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css') }}">
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <!-- Tempusdominus Bbootstrap 4 -->
     <link rel="stylesheet"
           href="{{ asset('adminLTE/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css') }}">
@@ -42,6 +42,7 @@
 </div>
 <!-- ./wrapper -->
 
+@stack('scripts')
 <!-- jQuery -->
 <script src="{{ asset('adminLTE/plugins/jquery/jquery.min.js') }}"></script>
 <!-- jQuery UI 1.11.4 -->
@@ -77,5 +78,8 @@
 <!-- AdminLTE for demo purposes -->
 <script src="{{ asset('adminLTE/dist/js/demo.js') }}"></script>
 <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="{{ asset('js/vue.js') }}"></script>
+<script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>

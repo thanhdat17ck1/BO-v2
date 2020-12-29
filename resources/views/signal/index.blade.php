@@ -30,13 +30,13 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr v-for="getstrategy in getstrategies">
-                            <th scope="row"><% getstrategy.id %></th>
-                            <td><% getstrategy.names %></td>
-                            <td><% getstrategy.created_at %></td>
+                        <tr v-for="getSignal in getSignals">
+                            <th scope="row"><% getSignal.id %></th>
+                            <td><% getSignal.name %></td>
+                            <td><% getSignal.created_at %></td>
                             <td>
-                                <button>Sửa</button>
-                                <button>Xóa</button>
+                                <button class="btn btn-default">Sửa</button>
+                                <button class="btn btn-danger">Xóa</button>
                             </td>
                         </tr>
 

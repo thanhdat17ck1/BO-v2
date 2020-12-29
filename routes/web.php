@@ -22,6 +22,10 @@ Route::get('/admin', function () {
 });
 
 Route::prefix('strategies')->group(function(){
+    Route::get('/',[
+        'as' => 'strategies.index',
+        'uses' => 'StrategyController@index'
+    ]);
     Route::get('/create',[
         'as' => 'strategies.create',
         'uses' => 'StrategyController@create'
@@ -29,6 +33,18 @@ Route::prefix('strategies')->group(function(){
     Route::post('/store',[
         'as' => 'strategies.store',
         'uses' => 'StrategyController@store'
+    ]);
+    Route::get('/edit/{id}',[
+        'as' => 'strategies.edit',
+        'uses' => 'StrategyController@edit'
+    ]);
+    Route::post('/update/{id}',[
+        'as' => 'strategies.update',
+        'uses' => 'StrategyController@update'
+    ]);
+    Route::get('/delete',[
+        'as' => 'strategies.delete',
+        'uses' => 'StrategyController@destroy'
     ]);
 });
 

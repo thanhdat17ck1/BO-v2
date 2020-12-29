@@ -26,7 +26,7 @@
                                 <div class="form-group">
                                     <label for="exampleFormControlSelect1">Chọn chiến lược</label>
                                     <select class="form-control" id="exampleFormControlSelect1" name="signal">
-                                        <option v-for="getData in getDatas" v-bind:value="getData.id"><% getData.names %></option>
+                                        <option v-for="getSignal in getSignals" v-bind:value="getData.id"><% getSignal.name %></option>
 
 {{--                                        <option v-for="getData in getDatas">{{ $name->name }}</option>--}}
 

@@ -24,7 +24,16 @@
                                 <input type="text" class="form-control col-md-4" placeholder="Nhập tên chiến lượt"
                                        name="name_stratery">
                             </div>
-                            <button type="submit" class="btn btn-primary dasdsdd">Submit</button>
+                            <div class="form-group">
+                                <label for="exampleFormControlSelect1">Chọn tín hiệu</label>
+                                <select class="form-control" id="exampleFormControlSelect1" name="signal">
+                                    <option v-for="getData in getDatas" v-bind:value="getData.id"><% getData.names %></option>
+
+                                    {{--<option v-for="getData in getDatas">{{ $name->name }}</option>--}}
+
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Submit</button>
                         </form>
                         <!-- /.content -->
                     </div>
