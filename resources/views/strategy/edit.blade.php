@@ -9,7 +9,7 @@
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
-    @include('partials.content-header', ['name' => 'admin', 'key' => 'Chiến lược'])
+    @include('partials.content-header', ['name' => 'admin', 'key' => 'Sửa chiến lược'])
     <!-- /.content-header -->
 
         <!-- Main content -->
@@ -22,7 +22,19 @@
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Tên chiến lượt</label>
                                 <input type="text" class="form-control col-md-4" placeholder="Nhập tên chiến lượt"
-                                       name="name_stratery" v-bind:value="getstrategies[].names">
+                                       name="name_stratery" value="{{ $strategy->names }} ">
+                                <label for="exampleInputEmail1">Số vốn</label>
+                                <input type="text" class="form-control col-md-4" placeholder="Nhập tên chiến lượt"
+                                       name="investment" value="{{ $strategy->investment }}">
+                                <label for="exampleInputEmail1">% lợi nhuận</label>
+                                <input type="text" class="form-control col-md-4" placeholder="Nhập % lợi nhuận"
+                                       name="profit" value="{{ $strategy->profit }}">
+                                <label for="exampleInputEmail1">% lỗ vốn</label>
+                                <input type="text" class="form-control col-md-4" placeholder="Nhập % lỗ vốn"
+                                       name="stoploss" value="{{ $strategy->stoploss }}">
+                                <label for="exampleInputEmail1">Số round</label>
+                                <input type="text" class="form-control col-md-4" placeholder="Nhập số round"
+                                       name="max_round" value="{{ $strategy->max_round }}">
                             </div>
                             <button type="submit" class="btn btn-primary">Submit</button>
                         </form>

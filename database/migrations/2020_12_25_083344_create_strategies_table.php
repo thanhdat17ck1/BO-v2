@@ -16,10 +16,10 @@ class CreateStrategiesTable extends Migration
         Schema::create('strategies', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('user_id');
-            $table->string('name');
-            $table->string('profit');
-            $table->string('stoploss');
-            $table->integer('status');
+            $table->string('names');
+            $table->float('investment');
+            $table->float('profit');
+            $table->float('stoploss');
             $table->integer('max_round');
             $table->timestamps();
         });

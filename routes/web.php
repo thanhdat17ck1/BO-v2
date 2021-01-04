@@ -14,12 +14,19 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('admin');
 });
 
-Route::get('/admin', function () {
-    return view('admin_strategies');
-});
+// Route::get('/signal', function () {
+//     return view('admin_signals');
+// });
+// Route::get('/metronic', function () {
+//     return view('admin');
+// });
+
+// Route::get('/admin', function () {
+//     return view('admin_strategies');
+// });
 
 Route::prefix('strategies')->group(function(){
     Route::get('/',[
@@ -42,9 +49,9 @@ Route::prefix('strategies')->group(function(){
         'as' => 'strategies.update',
         'uses' => 'StrategyController@update'
     ]);
-    Route::get('/delete',[
+    Route::get('/delete/{id}',[
         'as' => 'strategies.delete',
-        'uses' => 'StrategyController@destroy'
+        'uses' => 'StrategyController@delete'
     ]);
 });
 
@@ -57,8 +64,20 @@ Route::prefix('signals')->group(function(){
         'as' => 'signals.create',
         'uses' => 'SignalController@create'
     ]);
+    Route::get('/edit/{id}',[
+        'as' => 'signals.edit',
+        'uses' => 'SignalController@edit'
+    ]);
     Route::post('/store',[
         'as' => 'signals.store',
         'uses' => 'SignalController@store'
+    ]);
+    Route::post('/update/{id}',[
+        'as' => 'signals.update',
+        'uses' => 'SignalController@update'
+    ]);
+    Route::get('/delete/{id}',[
+        'as' => 'signals.delete',
+        'uses' => 'SignalController@delete'
     ]);
 });

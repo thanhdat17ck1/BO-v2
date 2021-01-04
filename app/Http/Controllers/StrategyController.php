@@ -13,28 +13,30 @@ class StrategyController extends Controller
         $this->strategy = $strategy;
     }
     public function index(){
-        return view('strategy.index');
+        // return view('category.index');
+        $strategies = $this->strategy->latest()->paginate(5);
+
+        return view('strategy.index',compact('strategies'));//lấy biến categories sang file khác để sử dụng
     }
+//    public function index(){
+//        return view('strategy.index');
+//    }
     public function create(){
 //        $htmlOption = $this->getCategory($parentId='');
 //        return view('category.add', compact('htmlOption'));
         return view('strategy.add');
     }
 
-//    public function index(){
-//        // return view('category.index');
-//        $categories = $this->category->latest()->paginate(5);
-//        return view('category.index',compact('categories'));//lấy biến categories sang file khác để sử dụng
-//    }
-//
+
+
     public function store(Request $request){
         $this->strategy->create ([
             'user_id' => 123,
             'names' => $request->name_stratery,
-            'profit' => 'acb',
-            'stoploss' => 'dsaad',
-            'status' => 1,
-            'max_round' => 5
+            'investment' => $request->investment,
+            'profit' => $request->profit,
+            'stoploss' => $request->stoploss,
+            'max_round' => $request->max_round
         ]);
         return redirect()->route('strategies.create');
     }
@@ -53,8 +55,14 @@ class StrategyController extends Controller
     public function update($id, Request $request){
         $strategy = $this->strategy->find($id)->update([
             'names' => $request->name_stratery,
+            'investment' => $request->investment,
+            'profit' => $request->profit,
+            'stoploss' => $request->stoploss,
+            'max_round' => $request->max_round
         ]);
-        return redirect()->route('strategy.index');
+
+        return redirect()->route('strategies.index');
+
     }
 //
     public function delete($id){

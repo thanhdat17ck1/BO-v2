@@ -13,30 +13,58 @@
     <!-- /.content-header -->
 
         <!-- Main content -->
-        <div class="content">
-            <div class="container-fluid">
+        <div class="d-flex flex-column-fluid">
+            <!--begin::Container-->
+            <div class="container">
                 <div class="row">
-                    <div class="col-lg-6">
-                        <form action="{{ route('signals.store') }}" method="post">
+                    <div class="col-md-12">
+                        <form action="{{ route('signals.store') }}" method="post" class="form" id="form-1">
                             @csrf
-                            <div class="form-group">
-                                <label for="exampleInputEmail1">Tạo tín hiệu</label>
-                                <input type="text" class="form-control col-md-4" placeholder="Nhập tên tín hiệu"
-                                       name="name_signal">
-                                <div class="form-group">
-                                    <label for="exampleFormControlSelect1">Chọn chiến lược</label>
-                                    <select class="form-control" id="exampleFormControlSelect1" name="signal">
-                                        <option v-for="getSignal in getSignals" v-bind:value="getData.id"><% getSignal.name %></option>
-
-{{--                                        <option v-for="getData in getDatas">{{ $name->name }}</option>--}}
-
+                            <div class="card card-custom gutter-b example example-compact">
+                                <div class="card-body">
+                                    <div class="form-group">
+                                        <label>Tên tín hiệu
+                                            <span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" placeholder="Tên tín hiệu" name="name">
+                                        <span class="form-message">Vui lòng nhập trường này</span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Mẫu tín hiệu
+                                            <span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" placeholder="Mẫu tín hiệu"
+                                               name="signal_pattern">
+                                    </div>
+                                    <label for="exampleSelect1">Lựa chọn khi thắng<span
+                                            class="text-danger">*</span></label>
+                                    <select class="form-control" id="exampleSelect1" name="option_win">
+                                        <option value="đánh tiếp">đánh tiếp</option>
+                                        <option value="quay lại từ đầu">quay lại từ đầu</option>
                                     </select>
+                                    <label for="exampleSelect1">Lựa chọn khi thua<span
+                                            class="text-danger">*</span></label>
+                                    <select class="form-control" id="exampleSelect1" name="option_loss">
+                                        <option value="đánh tiếp">đánh tiếp</option>
+                                        <option value="quay lại từ đầu">quay lại từ đầu</option>
+                                    </select>
+                                    <div class="form-group">
+                                        <label>Số lượt đánh
+                                            <span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" placeholder="Số lượt đánh"
+                                               name="number_of_turns">
+
+                                        <a href="#" id="btn-tao">Tạo</a>
+                                    </div>
+                                    <div id="them" class="col-md-5">
+
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Tạo tín hiệu</button>
+
                                 </div>
                             </div>
-                            <button type="submit" class="btn btn-primary">Submit</button>
                         </form>
-                        <!-- /.content -->
                     </div>
+
+
                 </div>
             </div>
         </div>
@@ -49,5 +77,27 @@
         <!-- Control sidebar content goes here -->
     </aside>
     <!-- /.control-sidebar -->
-
+    <script>
+        $(document).ready(function () {
+            $("#btn-tao").on('click', function (e) {
+                $("#them").empty();
+                e.preventDefault();
+                $sl = $('input[name="number_of_turns"]').val();
+                for (var i = 1; i <= $sl; i++) {
+                    $("#them").append(
+                        '<div class="abc">' +
+                        '<label for="exampleSelect1">Lượt ' + i + '<span class="text-danger">*</span></label>' +
+                        '<label for="exampleSelect1">Lựa chọn<span class="text-danger">*</span></label>' +
+                        '<select class="form-control" id="exampleSelect1" name="selection[]">' +
+                        '<option value="Đánh tăng">Đánh tăng</option>' +
+                        '<option value="Đánh giảm">Đánh giảm</option>' +
+                        '</select>' +
+                        '<label>Số tiền đặt cược<span class="text-danger">*</span></label>' +
+                        '<input type="text" class="form-control" placeholder="Số tiền đặt cược" name="bet_amount[]">' +
+                        '</div>'
+                    )
+                }
+            })
+        });
+    </script>
 @endsection

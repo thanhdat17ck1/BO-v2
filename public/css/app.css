@@ -1,9 +1,13 @@
-.content .bt-strategy{
+.content bt-strategy{
     background-color: #007bff;
     font-weight: 400;
     border: 1px solid transparent;
     padding: .375rem .75rem;
     border-radius: .25rem;
+}
+
+.form-group .abc{
+    display: inline-flex;
 }
 
 

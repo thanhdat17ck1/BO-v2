@@ -38,4 +38,6 @@ var app = new Vue({
     //     //console.log('re', response);
     //     this.getSignals = response['data'];
     // }
-})
+});
+
+
